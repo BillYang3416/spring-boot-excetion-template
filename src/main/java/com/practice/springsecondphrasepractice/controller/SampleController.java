@@ -19,13 +19,11 @@ public class SampleController {
 
     @GetMapping("/{id}")
     public StatusResponse testDataNotFound(@PathVariable @NotBlank String id) throws DataNotFoundException {
-
-       throw new DataNotFoundException("資料不存在");
+        throw new DataNotFoundException("資料不存在");
     }
 
     @GetMapping("/pathVariableInvalid/{id}")
-    public StatusResponse testPathVariableInvalid(@PathVariable @NotBlank  String id)  {
-
+    public StatusResponse testPathVariableInvalid(@PathVariable @NotBlank String id) {
         return new StatusResponse(id);
     }
 
